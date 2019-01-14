@@ -1,0 +1,17 @@
+.primary_color {
+    background-color: #FFDD00;
+}
+
+.background_primary_color {
+    background-color: #EFEFEF;
+}
+
+#login {
+    line-height: 4.4em;
+}
+
+#right_header {
+    float: right;
+    display: flex;
+    line-height: 100%;
+}
