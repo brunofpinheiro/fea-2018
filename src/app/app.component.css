@@ -2,10 +2,6 @@
     background-color: #FFDD00;
 }
 
-.background_primary_color {
-    background-color: #EFEFEF;
-}
-
 #login {
     line-height: 4.4em;
 }
@@ -14,4 +10,72 @@
     float: right;
     display: flex;
     line-height: 100%;
+}
+
+#nav_horizontal {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 2px solid #d5d5d5;
+    transition: margin .2s ease-in-out;
+    font-weight: bold; 
+}
+
+#nav_horizontal .navbar .navbar-nav li:first-child {
+    background: #efefef;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+#nav_horizontal .navbar .navbar-nav .nav-item a:hover {
+    background: #efefef;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+}
+
+.limit {
+    position: relative;
+    padding-left: 0;
+    display: flex;
+    max-width: 1360px;
+    min-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+#side_menu {
+    height: 418px;
+}
+
+#side_menu a {
+    color: #000;
+    font-weight: 400;
+    opacity: 0.8;
+    border-bottom: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+}
+
+#side_menu a:last-child {
+    border-bottom: unset;
+}
+
+#destaque {
+    display: block;
+}
+
+#destaque .carousel-inner img {
+    height: 418px;
+    width: 100%;
+}
+
+.carousel {
+    position: absolute;
+    margin-left: 192px;
+    top: 0;
+}
+
+.carousel-inner {
+    height: 418px;
 }
