@@ -2,42 +2,9 @@
     background-color: #FFDD00;
 }
 
-#login {
-    line-height: 4.4em;
-}
-
-#right_header {
-    float: right;
-    display: flex;
-    line-height: 100%;
-}
-
-#nav_horizontal {
-    width: 100%;
-    background-color: #fff;
-    border-bottom: 2px solid #d5d5d5;
-    transition: margin .2s ease-in-out;
-    font-weight: bold; 
-}
-
-#nav_horizontal .navbar .navbar-nav li:first-child {
-    background: #efefef;
-    font-weight: bold;
-    margin-right: 50px;
-}
-
-#nav_horizontal .navbar .navbar-nav .nav-item a:hover {
-    background: #efefef;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: #000;
-}
-
 .limit {
     position: relative;
     padding-left: 0;
-    display: flex;
     max-width: 1360px;
     min-width: 700px;
     margin: 0 auto;
@@ -61,6 +28,10 @@
     border-bottom: unset;
 }
 
+#side_menu a:hover {
+    background-color: #efefef;
+}
+
 #destaque {
     display: block;
 }
@@ -78,4 +49,18 @@
 
 .carousel-inner {
     height: 418px;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 25px;
+    display: block;
+    line-height: 1.2em;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+#mais_vendidos {
+    margin-top: 8vh;
+    padding: 0 30px;
 }

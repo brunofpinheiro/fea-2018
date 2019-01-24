@@ -1,0 +1,22 @@
+.primary_color {
+    background-color: #FFDD00;
+}
+
+#right_header {
+    float: right;
+    display: flex;
+    line-height: 70px;
+    height: 70px;
+}
+
+#right_header div {
+    margin: 0 3%;
+}
+
+#right_header img {
+    position: relative;
+}
+
+#login {
+    line-height: 4.4em;
+}

@@ -5,11 +5,15 @@ import { AppComponent } from './app.component';
 import { ProdutoThumbnailComponent } from './produto_thumbnail/produto.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProdutoThumbnailComponent
+    ProdutoThumbnailComponent,
+    HeaderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
