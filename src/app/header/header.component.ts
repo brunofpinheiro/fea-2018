@@ -14,4 +14,5 @@ export class HeaderComponent {
 
   shoppingCartImgSrc = "../assets/images/shopping_cart.png";
   shoppingCartAlt    = "Carrinho";
+  cartCount = 5;
 }

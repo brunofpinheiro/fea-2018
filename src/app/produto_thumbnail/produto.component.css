@@ -5,3 +5,8 @@
 .bg_white {
     background-color: #ffffff;
 }
+
+.produto_comp {
+    width: 15vw;
+    line-height: 1em;
+}

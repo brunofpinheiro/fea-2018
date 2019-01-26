@@ -20,3 +20,20 @@
 #login {
     line-height: 4.4em;
 }
+
+.cart_count {
+    position: absolute;
+    background: #000000;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#shopping_cart span {
+    display: unset;
+    margin: 0 -62px 0px 60px;
+    background-color: #000000;
+    padding: 0.25em 0.7em;
+}
