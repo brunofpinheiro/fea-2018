@@ -1,0 +1,66 @@
+.primary_color {
+	background-color: #FFDD00;
+}
+
+.limit {
+	position: relative;
+	padding-left: 0;
+	max-width: 1360px;
+	min-width: 700px;
+	margin: 0 auto;
+	text-align: left;
+	box-sizing: border-box;
+}
+
+#side_menu {
+	height: 418px;
+}
+
+#side_menu a {
+	color: #000;
+	font-weight: 400;
+	opacity: 0.8;
+	border-bottom: 1px solid #dbdbdb;
+	border-right: 1px solid #dbdbdb;
+}
+
+#side_menu a:last-child {
+	border-bottom: unset;
+}
+
+#side_menu a:hover {
+	background-color: #efefef;
+}
+
+#destaque {
+	display: block;
+}
+
+#destaque .carousel-inner img {
+	height: 418px;
+	width: 100%;
+}
+
+.carousel {
+	position: absolute;
+	margin-left: 192px;
+	top: 0;
+}
+
+.carousel-inner {
+	height: 418px;
+}
+
+h3 {
+	font-weight: 300;
+	font-size: 25px;
+	display: block;
+	line-height: 1.2em;
+	margin-right: 10px;
+	margin-bottom: 15px;
+}
+
+#mais_vendidos {
+	margin-top: 8vh;
+	padding: 0 30px;
+}

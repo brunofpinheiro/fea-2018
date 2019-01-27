@@ -1,0 +1,63 @@
+.primary_color {
+	background-color: #FFDD00;
+}
+
+.fornecedor {
+	padding: 10px;
+	min-height: 50px;
+	border: 1px solid #dee3e6;
+	margin-bottom: 0;
+}
+
+.preco {
+	padding-top: 30px;
+	padding: 30px 10px;
+	margin-bottom: 20px;
+	border: 1px solid #dfe3e6;
+	border-top: none;
+}
+
+.preco p, .preco h2 {
+	margin-bottom: 0;
+}
+
+.desconto {
+	color: #70a354;
+	background-color: #f8faf6;
+	cursor: pointer;
+	font-size: 12px;
+	text-align: center;
+	padding: 5px 0;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+#shipping {
+	width: 100%;
+	border: 1px solid #d5d5d5;
+	margin: 20px 0;
+	padding: 20px;
+}
+
+#shipping .zip {
+	width: 100%;
+}
+
+#shipping .zip .search_form input {
+	background: #fff;
+	border-color: #d5d5d5;
+	height: 48px;
+	clear: both;
+	display: block;
+	margin: auto;
+	color: #000;
+}
+
+input[type=text] {
+	border: 1px solid #d5d5d5;
+    padding: 0 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 100%;
+}

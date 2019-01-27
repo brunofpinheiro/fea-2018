@@ -1,0 +1,48 @@
+<div class="bg-white py-5">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-4 text-center">
+				<img class="center-block" [src]="produto.imagem" [alt]="produto.desc">
+			</div>
+			<div class="col-8">
+				<h1>{{produto.desc}}</h1>
+
+				<div class="desconto">
+					Economize até R$ 7,00
+				</div>
+
+				<div class="preco-wrapper">
+					<div class="fornecedor">
+						Vendido e entregue por <b>Saraiva</b>
+					</div>
+					<div class="preco">
+						<p class="text-secondary" style="text-decoration: line-through">R$ {{ produto.precoDe }}</p>
+						<h2>R$ {{ produto.precoPor }}</h2>
+						<h6>{{produto.parcelamento}}</h6>
+					</div>
+
+					<button class=" btn btn-block primary_color"> <b>COMPRAR</b></button>
+				</div>
+
+				<section id="shipping">
+					<div class="zip">
+						<p class="search_title" style="margin-bottom: 0;">
+							Receba no seu endereço
+						</p>
+						<div class="search_form w-100">
+							<input placeholder="CEP" type="text" />
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container py-5">
+	<div class="row bg-white mb-0">
+		<h2 class="fornecedor w-100">Descrição</h2>
+		<p class="preco mb-0">{{produto.descricao}}</p>
+	</div>
+</div>
