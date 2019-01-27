@@ -9,7 +9,7 @@
 				<h1>{{produto.desc}}</h1>
 
 				<div class="desconto">
-					Economize até R$ 7,00
+					Economize até R$ {{ (calculaEconomia() | currency:'BRL':true:'1.2-2').replace('.', ',')}}
 				</div>
 
 				<div class="preco-wrapper">

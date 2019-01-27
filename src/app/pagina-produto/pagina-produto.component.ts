@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { formatCurrency } from '@angular/common';
 
 @Component({
   selector: 'app-pagina-produto',
@@ -18,6 +19,18 @@ export class PaginaProdutoComponent implements OnInit {
 		console.log(this.produto)
 	}
 
-  ngOnInit() { }
+	ngOnInit() { }
+
+	public calculaEconomia(): number {
+		if(this.produto.precoPor && this.produto.precoDe ) {
+			const precoPor = this.produto.precoPor.replace(',', '.');
+			const precoDe  = this.produto.precoDe.replace(',', '.');
+			return Number(precoDe) - Number(precoPor)
+		} else {
+			return 0;
+		}
+	}
+	
+
 
 }
