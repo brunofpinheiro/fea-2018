@@ -11,10 +11,12 @@ import { PaginaProdutoComponent } from './pagina-produto/pagina-produto.componen
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { CarrinhoComprasComponent } from './carrinho-compras/carrinho-compras.component';
 
 const appRoutes: Routes = [
 	{ path: '', component: HomeComponent },
-  { path: 'produto', component: PaginaProdutoComponent }
+	{ path: 'produto', component: PaginaProdutoComponent },
+	{ path: 'carrinho', component: CarrinhoComprasComponent}
 ];
 
 @NgModule({
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     NavbarComponent,
     PaginaProdutoComponent,
-    HomeComponent
+    HomeComponent,
+    CarrinhoComprasComponent
   ],
   imports: [
     BrowserModule,

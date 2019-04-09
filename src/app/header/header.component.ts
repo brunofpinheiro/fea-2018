@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import carrinhoCompras from 'src/db/carrinho';
+import { CarrinhoComprasComponent } from '../carrinho-compras/carrinho-compras.component';
 
 @Component({
   selector: 'app-header',
@@ -14,5 +16,5 @@ export class HeaderComponent {
 
   shoppingCartImgSrc = "../assets/images/shopping_cart.png";
   shoppingCartAlt    = "Carrinho";
-  cartCount = 5;
+	cartCount = new CarrinhoComprasComponent().QuantidadeItensCarrinho();
 }
