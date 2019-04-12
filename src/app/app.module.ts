@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ProdutoThumbnailComponent } from './produto_thumbnail/produto.component';
+import { ProdutoComponent } from './produto_thumbnail/produto.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HeaderComponent } from "./header/header.component";
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProdutoThumbnailComponent,
+    ProdutoComponent,
     HeaderComponent,
     NavbarComponent,
     PaginaProdutoComponent,

@@ -7,7 +7,7 @@ import produtosLista, { Produto } from 'src/db/produtos';
 	templateUrl: './produto.component.html',
 	styleUrls: ['./produto.component.css']
 })
-export class ProdutoThumbnailComponent {
+export class ProdutoComponent {
 	imgPath = "../assets/images/";
 	produtos: Produto[] = produtosLista;
 
