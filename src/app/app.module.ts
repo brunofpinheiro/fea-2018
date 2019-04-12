@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ProdutoThumbnailComponent } from './produto_thumbnail/produto.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from "./header/header.component";
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaginaProdutoComponent } from './pagina-produto/pagina-produto.component';
 

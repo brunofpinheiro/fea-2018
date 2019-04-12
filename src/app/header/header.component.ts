@@ -1,20 +1,39 @@
-import { Component } from '@angular/core';
-import carrinhoCompras from 'src/db/carrinho';
+import { Component, OnInit } from '@angular/core';
 import { CarrinhoComprasComponent } from '../carrinho-compras/carrinho-compras.component';
+import carrinhoCompras, { Carrinho } from 'src/db/carrinho';
 
 @Component({
   selector: 'app-header',
   templateUrl: 'header.component.html',
   styleUrls: ['header.component.css']
 })
-export class HeaderComponent {
-  logoImgSrc = "../assets/images/saraiva_logo.png";
-  logoAlt = "Saraiva logo";
 
-  wishlistImgSrc = "../assets/images/heart.png";
-  wishlistAlt    = "Lista de desejos";
+export class HeaderComponent implements OnInit {
 
-  shoppingCartImgSrc = "../assets/images/shopping_cart.png";
-  shoppingCartAlt    = "Carrinho";
-	cartCount = new CarrinhoComprasComponent().QuantidadeItensCarrinho();
+	_carrinho: Carrinho;
+	logoImgSrc: string;
+	logoAlt: string;
+	wishlistImgSrc: string;
+	wishlistAlt: string;
+	shoppingCartImgSrc: string;
+	shoppingCartAlt: string;
+	cartCount: number;
+
+	public HeaderComponent() {
+		const carrinho = new CarrinhoComprasComponent();
+		this._carrinho = carrinho.LerCarrinho();
+		this.cartCount = carrinho.QuantidadeItensCarrinho();
+	}
+
+	ngOnInit() {
+		this.logoImgSrc = "../assets/images/saraiva_logo.png";
+		this.logoAlt = "Saraiva logo";
+	
+		this.wishlistImgSrc = "../assets/images/heart.png";
+		this.wishlistAlt    = "Lista de desejos";
+	
+		this.shoppingCartImgSrc = "../assets/images/shopping_cart.png";
+		this.shoppingCartAlt    = "Carrinho";
+	}
+
 }

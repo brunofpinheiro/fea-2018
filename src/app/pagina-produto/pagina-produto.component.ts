@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import produtosLista from 'src/db/produtos';
-import carrinhoCompras from 'src/db/carrinho';
 import { CarrinhoComprasComponent } from '../carrinho-compras/carrinho-compras.component';
 
 @Component({
@@ -34,7 +33,7 @@ export class PaginaProdutoComponent implements OnInit {
 		}
 	}
 
-	public AdicionarAoCarrinho(idProduto:number) {
+	public AdicionarAoCarrinho(idProduto: number) {
 		const indexProduto = this.ProcurarItemNaListaDeProdutos(idProduto);
 		let carrinho = this.carrinhoAplicacao;
 		if (carrinho.AdicionarProdutoNoCarrinho(produtosLista[indexProduto])) {

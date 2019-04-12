@@ -15,20 +15,21 @@ export class CarrinhoComprasComponent implements OnInit {
 
 	_carrinho: Carrinho;
 
-  constructor() {	
-		this._carrinho = carrinhoCompras;
+	constructor() { 
+		this._carrinho = this.LerCarrinho();
 	}
 
-  ngOnInit() {
-	}
+  ngOnInit() { }
 
 	public QuantidadeItensCarrinho(): number {
-			return this._carrinho.produtos.length
+		this.SetCarrinho();
+		return this._carrinho.produtos.length
 	}
 
 	public ValorCarrinho(): number {
 		let valorTotalCarrinho: number = 0;
-
+		
+		this.SetCarrinho();
 		this._carrinho.produtos.forEach(produto => {
 			valorTotalCarrinho += produto.precoPor
 		});
@@ -41,6 +42,7 @@ export class CarrinhoComprasComponent implements OnInit {
 
 		let valorAntigoDeVenda: number = 0;
 
+		this.SetCarrinho();
 	  this._carrinho.produtos.forEach(produto => {
 			valorAntigoDeVenda += produto.precoDe
 		});
@@ -49,14 +51,36 @@ export class CarrinhoComprasComponent implements OnInit {
 	}
 
 	public AdicionarProdutoNoCarrinho(produto: Produto): boolean {
-		if (this._carrinho.produtos.push(produto))
+		this.SetCarrinho();
+		if (this._carrinho.produtos.push(produto)) {
+			this.PersistirCarrinho(this._carrinho);
 			return true;
+		}
 		
 		return false;
 	}
 
-	public ObterCarrinho(): Carrinho {
-		return this._carrinho;
+	public RemoverProdutoDoCarrinho(produto: Produto): boolean {
+		this.SetCarrinho();
+
+		const posicaoProduto = this._carrinho.produtos.indexOf(produto);
+
+		if (this._carrinho.produtos.splice(posicaoProduto)) {
+			this.PersistirCarrinho(this._carrinho);
+			return true;
+		}
+		return false;
 	}
 
+	private PersistirCarrinho(carrinho: Carrinho): void {
+		localStorage.setItem('carrinho', JSON.stringify(carrinho))
+	}
+
+	private SetCarrinho(): void {
+		this._carrinho = this.LerCarrinho();
+	}
+
+	public LerCarrinho (): Carrinho {
+		return JSON.parse(localStorage.getItem('carrinho'));
+	}
 }
