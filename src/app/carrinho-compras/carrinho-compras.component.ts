@@ -15,12 +15,15 @@ import { ActivatedRoute } from '@angular/router';
 export class CarrinhoComprasComponent implements OnInit {
 
 	_carrinho: Carrinho;
+	_listaProdutos: any;
 
 	constructor(private route: ActivatedRoute) { 
 		this._carrinho = this.LerCarrinho();
+		this.CalcularListaDeProdutos();
 	}
 
-  ngOnInit() { }
+  ngOnInit() {
+	}
 
 	public QuantidadeItensCarrinho(): number {
 		this.SetCarrinho();
@@ -60,6 +63,29 @@ export class CarrinhoComprasComponent implements OnInit {
 		});
 
 		return valorAntigoDeVenda - valorRealDeVenda;
+	}
+
+	private CalcularListaDeProdutos() {
+		this.SetCarrinho();
+
+		this._listaProdutos = this.removeDuplicates(this._carrinho.produtos, "id");
+	}
+
+	private CalcularQuantidadeDoItem(idItem: number): number {
+		var count = 0;
+		this._carrinho.produtos.forEach(x => { 
+			if (x.id == idItem) { 
+				count = (count || 0)+1; 
+			}
+		});
+
+		return count;
+	}
+
+	private removeDuplicates(myArr, prop) {
+    return myArr.filter((obj, pos, arr) => {
+        return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
+    });
 	}
 
 	public AdicionarProdutoNoCarrinho(produto: Produto): boolean {

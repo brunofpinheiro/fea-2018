@@ -12,7 +12,7 @@
 			</thead>
 			<tbody>
 
-				<tr *ngFor="let produto of _carrinho.produtos">
+				<tr *ngFor="let produto of _listaProdutos">
 					<td data-th="Product">
 						<div class="row">
 							<div class="col-sm-2 hidden-xs"><img [src]="produto.imagem" [alt]="produto.desc" class="img-produto" />
@@ -25,7 +25,7 @@
 					</td>
 					<td data-th="Price">{{produto.precoDe | currency:'BRL'}}</td>
 					<td data-th="Quantity">
-						<input type="number" class="form-control text-center" value="1">
+						<input type="number" class="form-control text-center" [value]="CalcularQuantidadeDoItem(produto.id)">
 					</td>
 					<td data-th="Subtotal" class="text-center">{{produto.precoPor | currency:'BRL'}}</td>
 					<td class="actions" data-th="">
