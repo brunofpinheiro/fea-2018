@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoComprasComponent } from '../carrinho-compras/carrinho-compras.component';
 import carrinhoCompras, { Carrinho } from 'src/db/carrinho';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,12 +20,12 @@ export class HeaderComponent implements OnInit {
 	shoppingCartAlt: string;
 	cartCount: number;
 
-	public HeaderComponent() {
-		const carrinho = new CarrinhoComprasComponent();
-		this._carrinho = carrinho.LerCarrinho();
-		this.cartCount = carrinho.QuantidadeItensCarrinho();
+	constructor() {
+		// const carrinho = new CarrinhoComprasComponent();
+		// this._carrinho = carrinho.LerCarrinho();
+		// this.cartCount = carrinho.QuantidadeItensCarrinho();
 	}
-
+	
 	ngOnInit() {
 		this.logoImgSrc = "../assets/images/saraiva_logo.png";
 		this.logoAlt = "Saraiva logo";

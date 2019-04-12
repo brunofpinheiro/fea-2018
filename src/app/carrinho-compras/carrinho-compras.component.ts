@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { Produto } from 'src/db/produtos';
 import carrinhoCompras, { Carrinho } from 'src/db/carrinho';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-carrinho-compras',
@@ -15,7 +16,7 @@ export class CarrinhoComprasComponent implements OnInit {
 
 	_carrinho: Carrinho;
 
-	constructor() { 
+	constructor(private route: ActivatedRoute) { 
 		this._carrinho = this.LerCarrinho();
 	}
 
@@ -26,7 +27,7 @@ export class CarrinhoComprasComponent implements OnInit {
 		return this._carrinho.produtos.length
 	}
 
-	public ValorCarrinho(): number {
+	public ValorPago(): number {
 		let valorTotalCarrinho: number = 0;
 		
 		this.SetCarrinho();
@@ -37,8 +38,19 @@ export class CarrinhoComprasComponent implements OnInit {
 		return valorTotalCarrinho;
 	}
 
+	public ValorOriginalCarrinho(): number {
+		let valorTotalCarrinho: number = 0;
+		
+		this.SetCarrinho();
+		this._carrinho.produtos.forEach(produto => {
+			valorTotalCarrinho += produto.precoDe
+		});
+
+		return valorTotalCarrinho;
+	}
+
 	public DescontoTotalCarrinho(): number {
-		let valorRealDeVenda: number = this.ValorCarrinho();
+		let valorRealDeVenda: number = this.ValorPago();
 
 		let valorAntigoDeVenda: number = 0;
 

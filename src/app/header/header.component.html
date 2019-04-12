@@ -11,8 +11,8 @@
             <div id="wishlist">
                 <img src="{{wishlistImgSrc}}" alt="{{wishlistAlt}}" width="50">
             </div>
-            <div id="shopping_cart" (click)="AbrirCarrinho()">
-                <a href="#">
+            <div id="shopping_cart">
+                <a routerLink="/carrinho">
                     <span class="badge badge-dark rounded-circle">{{cartCount}}</span>
                     <img src="{{shoppingCartImgSrc}}" alt="{{shoppingCartAlt}}" width="50">
                 </a>
