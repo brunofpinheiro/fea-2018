@@ -37,11 +37,10 @@ export class PaginaProdutoComponent implements OnInit {
 		const indexProduto = this.ProcurarItemNaListaDeProdutos(idProduto);
 		let carrinho = this.carrinhoAplicacao;
 		if (carrinho.AdicionarProdutoNoCarrinho(produtosLista[indexProduto])) {
-			alert("sucesso");
+			alert("Produto adicionado ao carrinho!");
 		} else {
-			alert ("nao foi possivel");
+			alert ("Não foi possível adicionar o produto ao carrinho!");
 		}
-		console.log(carrinho);
 	}
 	
 	private ProcurarItemNaListaDeProdutos(idProduto: number): number {

@@ -1,6 +1,11 @@
 <div class="bg-white py-5">
 	<div class="container">
-		<table id="cart" class="table table-hover table-condensed">
+		<div *ngIf="_listaProdutos.length == 0">
+			<h2 class="text-center">Carrinho vazio!</h2>
+			<td><a routerLink="/" class="btn btn-info"><i class="fa fa-angle-left"></i> Voltar</a></td>
+		</div>
+
+		<table *ngIf="_listaProdutos.length > 0" id="cart" class="table table-hover table-condensed">
 			<thead>
 				<tr>
 					<th style="width:50%">Produto</th>
@@ -11,7 +16,6 @@
 				</tr>
 			</thead>
 			<tbody>
-
 				<tr *ngFor="let produto of _listaProdutos">
 					<td data-th="Product">
 						<div class="row">
@@ -41,9 +45,11 @@
 					<td><a routerLink="/" class="btn btn-info"><i class="fa fa-angle-left"></i> Continuar comprando</a></td>
 					<td colspan="2" class="hidden-xs"></td>
 					<td class="hidden-xs text-center"><strong>Total {{ValorPago() | currency:'BRL'}} <br> <small>Desconto de {{ DescontoTotalCarrinho() | currency:'BRL'}}</small> </strong></td>
-					<td><a class="btn btn-warning btn-block">Finalizar</a></td>
+					<td><a class="btn btn-warning btn-block" (click)="FinalizarCompra()">Finalizar</a></td>
 				</tr>
 			</tfoot>
 		</table>
+
+		<a *ngIf="_listaProdutos.length > 0"  class="" (click)="LimparCarrinho()">Limpar carrinho</a>
 	</div>
 </div>

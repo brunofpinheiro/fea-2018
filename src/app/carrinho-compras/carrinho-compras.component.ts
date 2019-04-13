@@ -110,6 +110,20 @@ export class CarrinhoComprasComponent implements OnInit {
 		return false;
 	}
 
+	public FinalizarCompra() {
+		this.PersistirCarrinho(carrinhoCompras);
+		this.SetCarrinho();
+		this.CalcularListaDeProdutos();
+		alert("Compra finalizada!");
+	}
+
+	public LimparCarrinho() {
+		this.PersistirCarrinho(carrinhoCompras);
+		this.SetCarrinho();
+		this.CalcularListaDeProdutos();
+		alert("Carrinho Limpo!");
+	}
+
 	private PersistirCarrinho(carrinho: Carrinho): void {
 		localStorage.setItem('carrinho', JSON.stringify(carrinho))
 	}
