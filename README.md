@@ -2,8 +2,8 @@
 Repositório utilizado na disciplina de Front-end avançada da Pós UFG 2018
 
 Integrantes:
-Bruno Faria Pinheiro
-Michael Alexandre Da Silva Sampietro
+*Bruno Faria Pinheiro
+*Michael Alexandre Da Silva Sampietro
 
 Ferramentas utilizadas:
 - Node.js
