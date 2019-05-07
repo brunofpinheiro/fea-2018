@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { Produto } from '../../db/produtos';
-import carrinhoCompras, { Carrinho } from '../../db/carrinho';
+import { Produto } from '../../src/db/produtos';
+import carrinhoCompras, { Carrinho } from '../../src/db/carrinho';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
