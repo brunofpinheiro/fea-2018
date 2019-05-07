@@ -101,13 +101,21 @@ export class CarrinhoComprasComponent implements OnInit {
 	public RemoverProdutoDoCarrinho(produto: Produto): boolean {
 		this.SetCarrinho();
 
-		const posicaoProduto = this._carrinho.produtos.indexOf(produto);
-
-		if (this._carrinho.produtos.splice(posicaoProduto)) {
-			this.PersistirCarrinho(this._carrinho);
-			return true;
+		let removidos = 0;
+		for (let i = 0 ; i < this._carrinho.produtos.length; i++) {
+			if (this.isEquivalent(this._carrinho.produtos[i], produto)) {
+				this._carrinho.produtos.splice(i);
+				removidos++;
+			}
 		}
-		return false;
+
+		if (removidos == 0)
+			return false;
+
+		this.PersistirCarrinho(this._carrinho);
+		this._listaProdutos = this.removeDuplicates(this._carrinho.produtos, "id");
+
+		return true;
 	}
 
 	public FinalizarCompra() {
@@ -134,5 +142,22 @@ export class CarrinhoComprasComponent implements OnInit {
 
 	public LerCarrinho (): Carrinho {
 		return JSON.parse(localStorage.getItem('carrinho'));
+	}
+
+	private isEquivalent(a: any, b: any) {
+    // Create arrays of property names
+    var aProps = Object.getOwnPropertyNames(a);
+    var bProps = Object.getOwnPropertyNames(b);
+    if (aProps.length != bProps.length) {
+        return false;
+    }
+    for (var i = 0; i < aProps.length; i++) {
+				var propName = aProps[i];
+				if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+
+    return true;
 	}
 }
