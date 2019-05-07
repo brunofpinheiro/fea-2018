@@ -10,7 +10,13 @@
 - Typescript
 - Visual Studio
 
-Para iniciar, basta executar o comando: `ng serve`. O servidor será iniciado no endereço http://localhost:4200
+O primeiro passo é executar o comando `npm install` para baixar as dependências.
+
+Depois, se aparecer uma mensagem informando sobre vulnerabilidades nas dependências, executar o comando `npm audit fix`.
+
+Nesse momento pode ser que o Visual Studio mostre erros nas dependências, como se não as tivesse encontrando. Se for o caso basta fechar e abrir o Visual Studio novamente.
+
+Para iniciar o projeto, basta executar o comando: `ng serve`. O servidor será iniciado no endereço http://localhost:4200
   
 Utilizamos como base o site da Saraiva e recriamos a estrutura da página inicial, da página de produtos e do carrinho.
   
